@@ -1,0 +1,15 @@
+.card {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    justify-content: center;
+    padding: 10px;
+    width: 100%;
+    gap: 5px;
+}
+
+.number {
+    font-size: 30px;
+    line-height: 30px;
+    font-weight: 200;
+}

@@ -1,0 +1,34 @@
+.card {
+    display: flex;
+    flex-direction: column;
+    width: 20%;
+    padding: 20px;
+    align-items: left;
+    justify-content: center;
+}
+
+.info {
+    display: flex;
+    flex-direction: column;
+    gap: 10px;
+}
+
+.image {
+    width: 100px;
+    height: 100px;
+    object-fit: cover;
+    margin: auto;
+    margin-bottom: 5px;
+}
+
+.button {
+    width: 30%;
+    margin-left: auto;
+}
+
+.price {
+    display: flex;
+    flex-direction: row;
+    align-items: center;
+    gap: 5px;
+}

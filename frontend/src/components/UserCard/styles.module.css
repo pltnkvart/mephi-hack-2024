@@ -1,0 +1,52 @@
+.card {
+    padding: 20px;
+    width: 100%;
+    height: 100%;
+    display: flex;
+    flex-direction: row;
+}
+
+.git {
+    display: inline-flex;
+    gap: 10px;
+    width: 100%;
+}
+
+.avatar {
+    border-radius: 50%;
+}
+
+.rating {
+    display: flex;
+    flex-direction: column;
+    gap: 20px;
+    padding: 10px;
+    width: 80%;
+    margin-left: 50px;
+}
+
+.user {
+    width: 20%;
+    display: flex;
+    flex-direction: column;
+    gap: 20px;
+}
+
+.achievements {
+    display: flex;
+    flex-direction: row;
+    gap: 20px;
+}
+
+.part {
+    display: flex;
+    flex-direction: column;
+    gap: 10px;
+}
+
+.task {
+    padding: 10px;
+    display: flex;
+    flex-direction: column;
+    gap: 10px;
+}
