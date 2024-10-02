@@ -16,9 +16,20 @@ const MyTable = withTableActions(Table);
 
 export const RatingPage = () => {
     const navigate = useNavigate();
+    const teamId = `Команда ${localStorage.getItem('teamId')}`;
     const { data: users } = useGetUsersQuery();
 
-    const DATA = users?.slice().sort((a, b) => b.total_rating - a.total_rating).map((user: IUser, index) => {
+    const DATA_TOTAL = users?.slice().sort((a, b) => b.total_rating - a.total_rating).map((user: IUser, index) => {
+        return {
+            id: user.id,
+            place: index + 1,
+            name: `${user.name} ${user.surname}`,
+            department: user.department,
+            rating: user.total_rating
+        };
+    }) || [];
+
+    const DATA_TEAM = users?.filter((user: IUser) => user.department === teamId).map((user: IUser, index) => {
         return {
             id: user.id,
             place: index + 1,
@@ -30,12 +41,26 @@ export const RatingPage = () => {
 
     return (
         <PageLayout>
-            <MyTable
-                className={styles.table}
-                data={DATA}
-                columns={COLUMNS}
-                onRowClick={(item) => { navigate(`/users/${item.id}`) }}
-            />
+            <div className={styles.wrapper}>
+                <div className={styles.part}>
+                    <Text variant="header-2" >Лоция</Text>
+                    <MyTable
+                        className={styles.table}
+                        data={DATA_TOTAL}
+                        columns={COLUMNS}
+                        onRowClick={(item) => { navigate(`/users/${item.id}`) }}
+                    />
+                </div>
+                <div className={styles.part}>
+                    <Text variant="header-2" >{teamId}</Text>
+                    <MyTable
+                        className={styles.table}
+                        data={DATA_TEAM}
+                        columns={COLUMNS}
+                        onRowClick={(item) => { navigate(`/users/${item.id}`) }}
+                    />
+                </div>
+            </div>
         </PageLayout>
     );
 }

@@ -5,10 +5,13 @@ import { ErrorPage } from './pages/ErrorPage/ErrorPage';
 import { RatingPage } from './pages/RatingPage/RatingPage';
 import { StorePage } from './pages/StorePage/StorePage';
 import { useEffect } from 'react';
+import { TeamPage } from './pages/TeamPage/TeamPage';
+import { NetworkPage } from './pages/NetworkPage/NetworkPage';
 
 export const App = () => {
   useEffect(() => {
     localStorage.setItem('userId', '1');
+    localStorage.setItem('teamId', '1');
   }, [])
 
   return (
@@ -23,6 +26,16 @@ export const App = () => {
           <Route
             path="/rating"
             element={<RatingPage />}
+            errorElement={<ErrorPage />}
+          />
+          <Route
+            path="/network"
+            element={<NetworkPage />}
+            errorElement={<ErrorPage />}
+          />
+          <Route
+            path="/team/:teamId"
+            element={<TeamPage />}
             errorElement={<ErrorPage />}
           />
           <Route

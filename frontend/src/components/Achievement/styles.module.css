@@ -6,10 +6,19 @@
     cursor: pointer;
 }
 
-.achievement {
+.modal {
     padding: 20px;
     display: flex;
     flex-direction: row;
+    gap: 20px;
+    align-items: center;
+    position: relative;
+}
+
+.achievement {
+    padding: 20px;
+    display: flex;
+    flex-direction: column;
     gap: 20px;
     align-items: center;
     position: relative;

@@ -8,6 +8,14 @@
     gap: 5px;
 }
 
+.text {
+    display: flex;
+    flex-direction: row;
+    align-items: center;
+    gap: 5px;
+    margin-top: 5px;
+}
+
 .number {
     font-size: 30px;
     line-height: 30px;

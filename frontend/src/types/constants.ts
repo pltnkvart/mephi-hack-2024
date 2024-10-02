@@ -1,4 +1,4 @@
-import {Person, LayoutRows3, Gift} from '@gravity-ui/icons';
+import {Person, LayoutRows3, Gift, Persons, Smartphone} from '@gravity-ui/icons';
 
 export const SERVICE_NAME = "Gamification";
 
@@ -16,6 +16,12 @@ export const MENU_ITEMS = [
         icon: Person,
     },
     {
+        id: 'team',
+        title: 'Моя команда',
+        path: `/team/${localStorage.getItem('teamId')}`,
+        icon: Persons,
+    },
+    {
         id: 'rating',
         title: 'Рейтинг',
         path: '/rating',
@@ -26,6 +32,12 @@ export const MENU_ITEMS = [
         title: 'Магазин поощрений',
         path: '/store',
         icon: Gift,
+    },
+    {
+        id: 'network',
+        title: 'ЛоцПорт',
+        path: '/network',
+        icon: Smartphone,
     },
 ];
 

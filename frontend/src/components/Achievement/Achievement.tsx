@@ -14,7 +14,7 @@ export const Achievement = ({ item }: IAchievementProps) => {
     return (
         <>
             <Modal open={isModalAchievementOpen} onClose={() => setIsModalAchievementOpen(false)}>
-                <div className={styles.achievement}>
+                <div className={styles.modal}>
                     <Xmark className={styles.close} onClick={() => setIsModalAchievementOpen(false)} />
                     <img src={item.image} alt={item.name} className={styles.achievementImage} />
                     <div className={styles.info}>
@@ -25,6 +25,7 @@ export const Achievement = ({ item }: IAchievementProps) => {
             </Modal>
             <div className={styles.achievement}>
                 <img src={item.image} alt={item.name} className={styles.achievementImage} onClick={() => setIsModalAchievementOpen(true)} />
+                <Text variant="subheader-1" color="primary">{item.name}</Text>
             </div>
         </>
     );
