@@ -1,11 +1,15 @@
 FROM node:18-alpine
 
-WORKDIR /app
+WORKDIR /shared
 
-COPY package*.json ./
+COPY shared/ ./
+
+WORKDIR /backend
+
+COPY backend/package*.json ./
 RUN npm install
 
-COPY . .
+COPY backend/ ./
 
 EXPOSE 3000
 

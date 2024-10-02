@@ -8,9 +8,6 @@ services:
       dockerfile: Dockerfile
     ports:
       - '5173:5173'
-    volumes:
-      - ./frontend:/app
-      - /app/node_modules
     depends_on:
       - backend
     environment:
@@ -20,13 +17,10 @@ services:
   backend:
     container_name: backend
     build:
-      context: ./backend
-      dockerfile: Dockerfile
+      context: .
+      dockerfile: backend/Dockerfile
     ports:
       - '3000:3000'
-    volumes:
-      - ./backend:/app
-      - /app/node_modules
     environment:
       - DATABASE_URL=mysql://root:password@db:3306/nestdb
     depends_on:

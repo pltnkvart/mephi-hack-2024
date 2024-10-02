@@ -1,7 +1,8 @@
 import { createApi, fetchBaseQuery } from '@reduxjs/toolkit/query/react';
 import { BASE_URL } from '../types/constants';
-import { IRating, IUser } from '../types/user';
-import { IStoreItem } from '../types/store';
+import { IRating,  } from '@shared/IRating';
+import { IUser } from "@shared/IUser";
+import { IStoreItem } from '@shared/IStoreItem';
 
 export const API = createApi({
     reducerPath: 'api',

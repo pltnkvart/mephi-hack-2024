@@ -5,7 +5,7 @@ import { RATING } from '../mocks/rating';
 export class RatingService {
   private ratings = RATING;
 
-  getUserRatingById(userId: number) {
-    return this.ratings.find((user) => user.id == userId);
+  getUserRatingById(userId: string) {
+    return this.ratings.find((user) => user.id === userId);
   }
 }

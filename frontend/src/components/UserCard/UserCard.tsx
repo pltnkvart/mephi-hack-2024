@@ -1,5 +1,5 @@
 import { Button, Card, Text } from "@gravity-ui/uikit";
-import { IUser } from "../../types/user";
+import { IUser } from "@shared/IUser";
 import styles from "./styles.module.css";
 import { useGetUserRatingQuery } from "../../slices/api";
 import { CardWithNumber } from "../CardWithNumber/CardWithNumber";

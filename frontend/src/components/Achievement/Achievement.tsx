@@ -1,5 +1,5 @@
 import { useState } from 'react';
-import { IAchievement } from '../../types/user';
+import { IAchievement } from '@shared/types/user';
 import styles from './styles.module.css';
 import { Modal, Text } from '@gravity-ui/uikit';
 import { Xmark } from '@gravity-ui/icons';

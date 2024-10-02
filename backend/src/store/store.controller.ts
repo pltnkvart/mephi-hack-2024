@@ -11,7 +11,7 @@ export class StoreController {
   }
 
   @Post('buy')
-  buyItem(@Body() body: { userId: number; itemId: number }) {
+  buyItem(@Body() body: { userId: string; itemId: string }) {
     const { userId, itemId } = body;
     const result = this.storeService.buyItem(userId, itemId);
     if (!result.success) {

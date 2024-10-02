@@ -1,5 +1,5 @@
 import { Button, Card, Text, useToaster } from "@gravity-ui/uikit"
-import { IStoreItem } from "../../types/store"
+import { IStoreItem } from "@shared/IStoreItem"
 import styles from "./styles.module.css"
 import { useBuyItemMutation } from "../../slices/api"
 import { addNotification } from "../../helpers"

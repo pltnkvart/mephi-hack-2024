@@ -1,7 +1,7 @@
 import { PageLayout } from "../../components/PageLayout/PageLayout";
 import { useGetUsersQuery } from "../../slices/api";
 import { Table, TableColumnConfig, TableDataItem, withTableActions } from "@gravity-ui/uikit";
-import { IUser } from "../../types/user";
+import { IUser } from "@shared/types/user";
 import styles from "./styles.module.css";
 import { useNavigate } from "react-router-dom";
 

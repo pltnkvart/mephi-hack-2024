@@ -6,7 +6,7 @@ export class RatingController {
   constructor(private readonly ratingService: RatingService) {}
 
   @Get(':userId')
-  getUserRating(@Param('userId') userId: number) {
+  getUserRating(@Param('userId') userId: string) {
     const userRating = this.ratingService.getUserRatingById(userId);
     if (!userRating) {
       throw new NotFoundException('User not found');

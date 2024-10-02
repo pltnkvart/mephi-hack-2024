@@ -11,7 +11,7 @@ export class UsersController {
   }
 
   @Get(':userId')
-  getUser(@Param('userId') userId: number) {
+  getUser(@Param('userId') userId: string) {
     const user = this.usersService.getUserById(userId);
     if (!user) {
       throw new NotFoundException('User not found');

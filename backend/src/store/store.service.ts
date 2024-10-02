@@ -12,9 +12,9 @@ export class StoreService {
     return this.store;
   }
 
-  buyItem(userId: number, itemId: number) {
-    const user = this.users.find((user) => user.id == userId);
-    const item = this.store.find((item) => item.id == itemId) || this.privileges.find((item) => item.id == itemId);
+  buyItem(userId: string, itemId: string) {
+    const user = this.users.find((user) => user.id === userId);
+    const item = this.store.find((item) => item.id === itemId) || this.privileges.find((item) => item.id === itemId);
 
     if (!user || !item) {
       return { success: false, message: 'User or item not found' };
