@@ -3,7 +3,7 @@ CREATE TABLE IF NOT EXISTS achievements (
     name VARCHAR(255),
     description TEXT,
     image_path VARCHAR(255) NOT NULL
-)
+);
 
 INSERT INTO achievements (id, name, description, image_path) VALUES
     (UUID(), 'Bug Buster', 'For finding and fixing the most critical bug.', '/images/achievements/bugbuster.jfif'),
@@ -24,5 +24,5 @@ INSERT INTO achievements (id, name, description, image_path) VALUES
     (UUID(), 'Creative Coyote', 'For the highest number of innovative product ideas proposed.', '/images/achievments/creativecoyote.jfif'),
     (UUID(), 'Night Encryptor', 'For developing code late at night (nightly accomplishments).', '/images/achievments/nightencryptor.jfif'),
     (UUID(), 'Security Sensei', 'For implementing reliable security measures in the project.', '/images/achievments/securitysensei.jfif'),
-    (UUID(), 'API Ас', 'For creating the most elegant and easy-to-use API.', '/images/achievments/apiaс.jfif'),
+    (UUID(), 'API Асe', 'For creating the most elegant and easy-to-use API.', '/images/achievments/apiaс.jfif'),
     (UUID(), 'Front-End Phenomenon', 'For outstanding work on the front end of the project.', '/images/achievments/frontendphenomenon.jfif');
