@@ -13,5 +13,5 @@ export interface IUser{
   balance: number,
   total_rating: number,
   place: number,
-  achievements: IAchievement[],
+  achievements: string[],
 }

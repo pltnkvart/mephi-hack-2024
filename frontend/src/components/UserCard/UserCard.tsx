@@ -55,13 +55,14 @@ export const UserCard = ({ data }: IUserCardProps) => {
                 </div>
                 <div className={styles.part}>
                     <Text variant="header-1" >Ачивки</Text>
-                    <Card type="container" view="outlined" className={styles.part}>
+                    // TODO
+                    {/* <Card type="container" view="outlined" className={styles.part}>
                         <div className={styles.achievements}>
                             {data?.achievements?.map((item, index) => (
                                 <Achievement key={index} item={item} />
                             ))}
                         </div>
-                    </Card>
+                    </Card> */}
                 </div>
                 {isMe && <div className={styles.part}>
                     <Text variant="header-1">Ежедневное задание</Text>
