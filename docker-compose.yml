@@ -6,37 +6,49 @@ services:
     build:
       context: ./frontend
       dockerfile: Dockerfile
+    env_file:
+      - .env
     ports:
-      - '5173:5173'
+      - $FRONTEND_LOCAL_PORT:$FRONTEND_DOCKER_PORT
     depends_on:
       - backend
     environment:
+      - PORT=$FRONTEND_LOCAL_PORT
       - CHOKIDAR_USEPOLLING=true
+    networks:
+      - default
     command: npm run dev -- --host
+
 
   backend:
     container_name: backend
     build:
       context: .
       dockerfile: backend/Dockerfile
+    env_file:
+      - .env
     ports:
-      - '3000:3000'
-    environment:
-      - DATABASE_URL=mysql://root:password@db:3306/nestdb
+      - $BACKEND_LOCAL_PORT:$BACKEND_DOCKER_PORT
     depends_on:
       - db
+    networks:
+      - default
     command: npm run start:dev
 
   db:
     image: mysql:latest
     container_name: mysql-db
-    environment:
-      MYSQL_ROOT_PASSWORD: password
-      MYSQL_DATABASE: nestdb
+    env_file:
+      - .env
     ports:
-      - '3306:3306'
+      - $MYSQL_LOCAL_PORT:$MYSQL_DOCKER_PORT
+    expose:
+      - '3306'
     volumes:
-      - db-data:/var/lib/mysql
+      - db-data:/var/lib/mysql:rw
+      - ./mysql-db:/docker-entrypoint-initdb.d/
+    networks:
+      - default
 
 volumes:
   db-data:
