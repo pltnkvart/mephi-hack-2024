@@ -20,9 +20,6 @@ import { AchievementsModule } from './achievements/achievements.module';
       entities: [__dirname + '/**/*.entity{.ts,.js}'],
       synchronize: false,
     }),
-    ServeStaticModule.forRoot({
-      rootPath: join(__dirname, '..', 'public'),
-    }),
     UsersModule, StoreModule, RatingModule, PrivilegesModule, AchievementsModule
   ]
 })
